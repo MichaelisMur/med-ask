@@ -124,7 +124,7 @@ export default class App extends React.Component{
                             color: "white",
                             border: this.state.havesent ? "1px solid lightgray" : "1px solid #ed462f"
                         } : {
-                            background: this.state.havesent ? "lightgray" : "#white",
+                            background: this.state.havesent ? "lightgray" : "white",
                             color:  this.state.havesent ? "white" : "#ed462f",
                             border: this.state.havesent ? "1px solid lightgray" : "1px solid #ed462f"
                         }}

@@ -31,44 +31,38 @@ const checkServices = (list) => {
 
 app.post("/", (req ,res)=>{
     if(req.body.polis_ltd_sk == "СК МЕД-АСКЕР"){
-        SK_MED_ASK.polis.forEach(el=>{
-            if(el.polis_ltd_id == req.body.polis_ltd_id && el.polis_ltd_type == req.body.polis_ltd_type){
-                res.send({...{
+        for(i = 0; i<SK_MED_ASK.polis.length; i++){
+            if(SK_MED_ASK.polis[i].polis_ltd_id == req.body.polis_ltd_id && SK_MED_ASK.polis[i].polis_ltd_type == req.body.polis_ltd_type){
+                return res.send({...{
                     response: "OK",
-                    polis_ltd_date_end: el.polis_ltd_date_end,
-                    polis_ltd_tel: el.polis_ltd_tel
+                    polis_ltd_date_end: SK_MED_ASK.polis[i].polis_ltd_date_end,
+                    polis_ltd_tel: SK_MED_ASK.polis[i].polis_ltd_tel
                 }, ...checkServices(req.body.chosenServices)})
             }
-        })
-        return res.send({
-            response: "error"
-        })
+            if(i == SK_MED_ASK.polis.length -1 ) return res.send({response: "error"})
+        }
     } else if (req.body.polis_ltd_sk == "СК Рандеву"){
-        SK_RANDEVU.polis.forEach(el=>{
-            if(el.polis_ltd_id == req.body.polis_ltd_id && el.polis_ltd_type == req.body.polis_ltd_type){
-                res.send({...{
+        for(i = 0; i<SK_RANDEVU.polis.length; i++){
+            if(SK_RANDEVU.polis[i].polis_ltd_id == req.body.polis_ltd_id && SK_RANDEVU.polis[i].polis_ltd_type == req.body.polis_ltd_type){
+                return res.send({...{
                     response: "OK",
-                    polis_ltd_date_end: el.polis_ltd_date_end,
-                    polis_ltd_tel: el.polis_ltd_tel
+                    polis_ltd_date_end: SK_RANDEVU.polis[i].polis_ltd_date_end,
+                    polis_ltd_tel: SK_RANDEVU.polis[i].polis_ltd_tel
                 }, ...checkServices(req.body.chosenServices)})
             }
-        })
-        return res.send({
-            response: "error"
-        })
+            if(i == SK_RANDEVUZ.polis.length -1 ) return res.send({response: "error"})
+        }
     } else if (req.body.polis_ltd_sk == "Страх-трах"){
-        SK_STRAH.polis.forEach(el=>{
-            if(el.polis_ltd_id == req.body.polis_ltd_id && el.polis_ltd_type == req.body.polis_ltd_type){
-                res.send({...{
+        for(i = 0; i<SK_STRAH.polis.length; i++){
+            if(SK_STRAH.polis[i].polis_ltd_id == req.body.polis_ltd_id && SK_STRAH.polis[i].polis_ltd_type == req.body.polis_ltd_type){
+                return res.send({...{
                     response: "OK",
-                    polis_ltd_date_end: el.polis_ltd_date_end,
-                    polis_ltd_tel: el.polis_ltd_tel
+                    polis_ltd_date_end: SK_STRAH.polis[i].polis_ltd_date_end,
+                    polis_ltd_tel: SK_STRAH.polis[i].polis_ltd_tel
                 }, ...checkServices(req.body.chosenServices)})
             }
-        })
-        return res.send({
-            response: "error"
-        })
+            if(i == SK_STRAH.polis.length -1 ) return res.send({response: "error"})
+        }
     }
 })
 

@@ -23,21 +23,48 @@ export default class PolisCompany extends React.Component{
                             color: this.props.currentCompany ? "black" : "gray"
                         }}
                     >
-                        {this.props.currentCompany ? this.props.currentCompany : "Выберите страховую компанию"}
+                        {this.props.currentCompany ? 
+                            <div className="chosenCompany">
+                                <div
+                                    className="compIcons"
+                                    style={{
+                                        backgroundImage: `url(${this.switch(this.props.currentCompany)})`
+                                    }}
+                                ></div><div>{this.props.currentCompany}</div>
+                            </div>
+                             : "Выберите страховую компанию"
+                        }
                     </div>
                     {this.props.companiesList.map((el, key)=>(
                         <div className="company"
                             style={{
-                                display: this.state.opened ? "block" : "none"
+                                display: this.state.opened ? "flex" : "none"
                             }}
                             key={key}
                         >
-                            {el}
+                            <div
+                                className="compIcons"
+                                style={{
+                                    backgroundImage: `url(${this.switch(el)})`
+                                }}
+                            ></div>
+                            <div
+                                className="compText"
+                            >
+                                {el}
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
         )
+    }
+    switch(pic){
+        switch(pic){
+            case "СК Рандеву": return "/public/randevu.png"
+            case "СК МЕД-АСКЕР": return "/public/medask.png"
+            case "Страх-трах": return "/public/trah.png"
+        }
     }
     componentDidUpdate(){
         if(this.props.closeCurtain) this.setState({

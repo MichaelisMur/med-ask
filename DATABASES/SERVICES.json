@@ -1,0 +1,44 @@
+{
+    "services": [
+        {
+            "title": "Первичный приём врача-стоматолога терапевта",
+            "status": "polis_ltd_inservice"
+        },
+        {
+            "title": "Полирование челюсти",
+            "status": "polis_ltd_inservice"
+        },
+        {
+            "title": "Снятие камней с 1 зуба",
+            "status": "polis_ltd_inservice"
+        },
+        {
+            "title": "Рентген верхней и нижней челюстей",
+            "status": "polis_ltd_inservice"
+        },
+        {
+            "title": "МРТ грудной клетки",
+            "status": "polis_ltd_inservice"
+        },
+        {
+            "title": "МРТ челюсти",
+            "status": "polis_ltd_notservice"
+        },
+        {
+            "title": "Рентген грудной клетки",
+            "status": "polis_ltd_notservice"
+        },
+        {
+            "title": "Исследование функции внешнего дыхания",
+            "status": "polis_ltd_notservice"
+        },
+        {
+            "title": "Денситометрия",
+            "status": "polis_ltd_notservice"
+        },
+        {
+            "title": "МРТ головного мозга",
+            "status": "polis_ltd_notservice"
+        }
+    ]
+}
